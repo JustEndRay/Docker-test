@@ -29,4 +29,6 @@ jobs:
         uses: astral-sh/ruff-action@v3
         with:
           args: "check Backend/app.py"
-#test
+
+      - name: Build Docker image
+        run: docker build -t pdp-backend-ci:local ./Backend
