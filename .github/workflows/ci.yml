@@ -20,6 +20,13 @@ jobs:
           hostname
           uname -a
           pwd
+
       - name: Check
         run: |
           test -f Backend/app.py
+
+      - name: Lint Python code
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "check Backend/app.py"
+#test
